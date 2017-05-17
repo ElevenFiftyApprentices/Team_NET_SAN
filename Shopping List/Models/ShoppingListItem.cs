@@ -13,7 +13,6 @@ namespace Shopping_List.Models
     }
     public class ShoppingListItem
     {
-        [Key]
         public int Id { get; set; }
 
         public int ShoppingListId { get; set; }
@@ -26,5 +25,7 @@ namespace Shopping_List.Models
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset ModifiedUtc { get; set; }
+
+        public virtual ICollection<ShoppingList> ShoppingList { get; set; }
     }
 }
