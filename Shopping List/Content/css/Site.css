@@ -77,6 +77,36 @@ a {
     border-radius: 15px;
 }
 
+/*Register Page*/
+
+#register-heading {
+    font-size: 75px;
+    color: white;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+#register-form {
+    background-color: #476dd5;
+    opacity: 0.85;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 75px;
+    width: 50%;
+    margin-left: 285px;
+    margin-bottom: 80px;
+}
+
+#register-button {
+    margin-left: 85px;
+}
+
+#register-form {
+    color: white;
+    font-size: 15px;
+}
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
