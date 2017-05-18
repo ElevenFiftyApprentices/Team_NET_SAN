@@ -97,6 +97,54 @@ a {
     border-radius: 25px;
 }
 
+/*Contact Page*/
+
+#contact-heading {
+    font-size: 75px;
+    color: white;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+#contact-titles {
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#student-name {
+    color: white;
+    font-size: 30px;
+}
+
+#nathan-contact-info {
+    background-color: #476dd5;
+    opacity: 0.85;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 80px;
+    margin-left: 65px;
+}
+
+#adam-contact-info {
+    background-color: #476dd5;
+    opacity: 0.85;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 80px;
+}
+
+#shelby-contact-info {
+    background-color: #476dd5;
+    opacity: 0.85;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+}
+
 /*Register Page*/
 
 #register-heading {
@@ -125,6 +173,37 @@ a {
 #register-form {
     color: white;
     font-size: 15px;
+}
+
+/*Log in*/
+
+#login-title {
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 45px;
+}
+
+#login-form {
+    background-color: #476dd5;
+    opacity: 0.85;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 75px;
+    width: 80%;
+    color: white;
+    border-radius: 15px;
+}
+
+/*External Login*/
+
+#external-login-heading {
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 15px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
