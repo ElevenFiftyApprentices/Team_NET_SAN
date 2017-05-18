@@ -3,7 +3,11 @@
     padding-bottom: 20px;
     background-color: #FFDD73;
     font-family: Comic Sans;
-    background-image: url(../img/list-background-photo.jpeg)
+    background-image: url(../img/jumbo-photo-1.jpg);
+}
+
+a {
+    color: white;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -15,7 +19,7 @@
 /*JUMBOTRON*/
 
 .jumbotron {
-    background-image: url(../img/jumbo-photo.jpg);
+    background-image: url(../img/jumbo-photo-3.jpeg);
 }
 
 #jumbo-heading {
@@ -43,11 +47,15 @@
     text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+#home-text {
+    font-size: 20px;
+}
+
 #col-1 {
     text-align: center;
     background-color: #476dd5;
     color: white;
-    opacity: 0.75;
+    opacity: 0.85;
     border-radius: 15px;
     margin: 0px 125px 0px 20px;
 }
@@ -56,7 +64,7 @@
     text-align: center;
     background-color: #476dd5;
     color: white;
-    opacity: 0.75;
+    opacity: 0.85;
     border-radius: 15px;
     margin-right: 125px;
 }
@@ -65,7 +73,7 @@
     text-align: center;
     background-color: #476dd5;
     color: white;
-    opacity: 0.75;
+    opacity: 0.85;
     border-radius: 15px;
 }
 
