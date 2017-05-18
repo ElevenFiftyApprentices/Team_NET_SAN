@@ -3,7 +3,11 @@
     padding-bottom: 20px;
     background-color: #FFDD73;
     font-family: Comic Sans;
-    background-image: url(../img/list-background-photo.jpeg)
+    background-image: url(../img/jumbo-photo-1.jpg);
+}
+
+a {
+    color: white;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -15,7 +19,7 @@
 /*JUMBOTRON*/
 
 .jumbotron {
-    background-image: url(../img/jumbo-photo.jpg);
+    background-image: url(../img/jumbo-photo-3.jpeg);
 }
 
 #jumbo-heading {
@@ -43,11 +47,15 @@
     text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+#home-text {
+    font-size: 20px;
+}
+
 #col-1 {
     text-align: center;
     background-color: #476dd5;
     color: white;
-    opacity: 0.75;
+    opacity: 0.85;
     border-radius: 15px;
     margin: 0px 125px 0px 20px;
 }
@@ -56,7 +64,7 @@
     text-align: center;
     background-color: #476dd5;
     color: white;
-    opacity: 0.75;
+    opacity: 0.85;
     border-radius: 15px;
     margin-right: 125px;
 }
@@ -65,8 +73,137 @@
     text-align: center;
     background-color: #476dd5;
     color: white;
-    opacity: 0.75;
+    opacity: 0.85;
     border-radius: 15px;
+}
+
+/*About Page*/
+
+#about-heading {
+    font-size: 75px;
+    color: white;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#about-container {
+    background-color: #476dd5;
+    opacity: 0.85;
+    width: 60%;
+    margin: auto;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 25px;
+}
+
+/*Contact Page*/
+
+#contact-heading {
+    font-size: 75px;
+    color: white;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+#contact-titles {
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#student-name {
+    color: white;
+    font-size: 30px;
+}
+
+#nathan-contact-info {
+    background-color: #476dd5;
+    opacity: 0.85;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 80px;
+    margin-left: 65px;
+}
+
+#adam-contact-info {
+    background-color: #476dd5;
+    opacity: 0.85;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 80px;
+}
+
+#shelby-contact-info {
+    background-color: #476dd5;
+    opacity: 0.85;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+}
+
+/*Register Page*/
+
+#register-heading {
+    font-size: 75px;
+    color: white;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+#register-form {
+    background-color: #476dd5;
+    opacity: 0.85;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 75px;
+    width: 50%;
+    margin-left: 285px;
+    margin-bottom: 80px;
+}
+
+#register-button {
+    margin-left: 85px;
+}
+
+#register-form {
+    color: white;
+    font-size: 15px;
+}
+
+/*Log in*/
+
+#login-title {
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 45px;
+}
+
+#login-form {
+    background-color: #476dd5;
+    opacity: 0.85;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 75px;
+    width: 80%;
+    color: white;
+    border-radius: 15px;
+}
+
+/*External Login*/
+
+#external-login-heading {
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 15px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 

@@ -35,8 +35,37 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - SAN's Market List</p>
+        <footer class="simple-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <span class="copyright">&copy; @DateTime.Now.Year - SAN's Market List</span>  
+                    </div>
+                    <div class="col-md-4" style="padding-left: 9%">
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#"><i class="fa fa-twitter fa-3x"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class=" fa fa-facebook fa-3x"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class=" fa fa-github fa-3x"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4" style="padding-left: 15%">
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#">Terms of Use</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 
