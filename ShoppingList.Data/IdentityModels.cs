@@ -3,8 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-
-
+using ShoppingList.Models;
 
 namespace ShoppingList.Data
 {
@@ -32,8 +31,8 @@ namespace ShoppingList.Data
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<ShoppingList.Models.List> Lists { get; set; }
+        public DbSet<List> Lists { get; set; }
 
-        public System.Data.Entity.DbSet<ShoppingList.Models.ListItem> ListItems { get; set; }
+        public DbSet<ListItem> ListItems { get; set; }
     }
 }

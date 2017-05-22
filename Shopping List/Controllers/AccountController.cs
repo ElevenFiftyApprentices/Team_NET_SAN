@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Shopping_List.Models;
 using ShoppingList.Models;
+using ShoppingList.Data;
 
 namespace Shopping_List.Controllers
 {
