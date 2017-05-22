@@ -7,8 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ShoppingList.Models;
+using ShoppingList.Data;
 
-namespace Shopping_List.Controllers
+namespace ShoppingList.Controllers
 {
     public class ListItemController : Controller
     {
