@@ -6,9 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Shopping_List.Models;
+using ShoppingList.Models;
 
-namespace Shopping_List.Controllers
+namespace ShoppingList.Controllers
 {
     public class ShoppingListController : Controller
     {

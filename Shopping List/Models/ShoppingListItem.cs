@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Web;
 
-namespace Shopping_List.Models
+namespace ShoppingList.Models
 {
     public enum Priority
     {
@@ -12,7 +12,7 @@ namespace Shopping_List.Models
         Want,
         Later
     }
-    public class ShoppingListItem
+    public class ListItem
     {
         public int Id { get; set; }
 
@@ -27,6 +27,6 @@ namespace Shopping_List.Models
 
         public DateTimeOffset ModifiedUtc { get; set; }
 
-        public virtual ICollection<ShoppingList> ShoppingList { get; set; }
+        public virtual ICollection<List> List { get; set; }
     }
 }

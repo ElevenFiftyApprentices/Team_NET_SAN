@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Shopping_List.Models
+namespace ShoppingList.Models
 {
-    public class ShoppingList
+    public class List
     {
         [Key]
         public int Id { get; set; }

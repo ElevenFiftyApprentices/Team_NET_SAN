@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Shopping_List.Models
+namespace ShoppingList.Models
 {
     public class Note
     {
@@ -17,6 +17,6 @@ namespace Shopping_List.Models
 
         public DateTimeOffset ModifiedUtc { get; set; }
 
-        public virtual ICollection<ShoppingList> ShoppingList { get; set; }
+        public virtual ICollection<List> List { get; set; }
     }
 }

@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Shopping_List.Models;
+using ShoppingList.Models;
 
-namespace Shopping_List.Controllers
+namespace ShoppingList.Controllers
 {
     [Authorize]
     public class ManageController : Controller

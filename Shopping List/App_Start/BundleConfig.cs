@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Shopping_List
+namespace ShoppingList
 {
     public class BundleConfig
     {

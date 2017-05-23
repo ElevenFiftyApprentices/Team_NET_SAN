@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using Shopping_List.Models;
+using ShoppingList.Models;
 using System.Linq;
 using System.Web;
 
-namespace Shopping_List.DAL
+namespace ShoppingList.DAL
 {
     public class ListContext : DbContext
     {

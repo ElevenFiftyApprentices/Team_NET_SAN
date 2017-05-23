@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace Shopping_List.Models
+namespace ShoppingList.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -30,8 +30,8 @@ namespace Shopping_List.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<Shopping_List.Models.ShoppingList> ShoppingLists { get; set; }
+        public System.Data.Entity.DbSet<global::ShoppingList.Models.ShoppingList> ShoppingLists { get; set; }
 
-        public System.Data.Entity.DbSet<Shopping_List.Models.ShoppingListItem> ShoppingListItems { get; set; }
+        public System.Data.Entity.DbSet<global::ShoppingList.Models.ShoppingListItem> ShoppingListItems { get; set; }
     }
 }
