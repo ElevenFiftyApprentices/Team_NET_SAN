@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Shopping_List.Models;
+using Shopping_List.Data;
 
 namespace Shopping_List
 {
