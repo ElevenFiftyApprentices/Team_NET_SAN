@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ShoppingList.Models.List>
+﻿@model IEnumerable<Shopping_List.Models.ShoppingListItem>
 
 @{
     ViewBag.Title = "Index";
@@ -11,14 +11,14 @@
 </p>
 <table class="table">
     <tr>
-        @*<th>
-            @Html.DisplayNameFor(model => model.UserId)
-        </th>*@
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.ShoppingListId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Color)
+            @Html.DisplayNameFor(model => model.Contents)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsChecked)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CreatedUtc)
@@ -31,14 +31,14 @@
 
 @foreach (var item in Model) {
     <tr>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.UserId)
-        </td>*@
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.ShoppingListId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Color)
+            @Html.DisplayFor(modelItem => item.Contents)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsChecked)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreatedUtc)

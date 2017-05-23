@@ -3,11 +3,11 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using ShoppingList.Models;
+using Shopping_List.Models;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace ShoppingList.Data
+namespace Shopping_List.Data
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -45,9 +45,9 @@ namespace ShoppingList.Data
                 .Add(new IdentityUserRoleConfiguration());
         }
 
-        public DbSet<List> Lists { get; set; }
+        public DbSet<ShoppingList> ShoppingLists { get; set; }
 
-        public DbSet<ListItem> ListItems { get; set; }
+        public DbSet<ShoppingListItem> ShoppingListItems { get; set; }
     }
 
     public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
@@ -64,5 +64,10 @@ namespace ShoppingList.Data
         {
             HasKey(iur => iur.UserId);
         }
+
+        public System.Data.Entity.DbSet<Shopping_List.Models.ShoppingList> ShoppingLists { get; set; }
+
+        public System.Data.Entity.DbSet<Shopping_List.Models.ShoppingListItem> ShoppingListItems { get; set; }
+
     }
 }

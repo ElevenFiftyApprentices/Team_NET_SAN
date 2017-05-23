@@ -190,9 +190,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ListController.cs" />
-    <Compile Include="Controllers\ListItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ShoppingListController.cs" />
+    <Compile Include="Controllers\ShoppingListItemController.cs" />
+    <Compile Include="DAL\ListContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -202,12 +203,18 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\img\cart-photo.jpeg" />
+    <Content Include="Content\img\jumbo-photo-1.jpg" />
+    <Content Include="Content\img\jumbo-photo-2.jpeg" />
+    <Content Include="Content\img\jumbo-photo-3.jpeg" />
+    <Content Include="Content\img\jumbo-photo.jpg" />
+    <Content Include="Content\img\list-background-photo.jpeg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\css\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -258,16 +265,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\List\Create.cshtml" />
-    <Content Include="Views\List\Delete.cshtml" />
-    <Content Include="Views\List\Details.cshtml" />
-    <Content Include="Views\List\Edit.cshtml" />
-    <Content Include="Views\List\Index.cshtml" />
-    <Content Include="Views\ListItem\Create.cshtml" />
-    <Content Include="Views\ListItem\Delete.cshtml" />
-    <Content Include="Views\ListItem\Details.cshtml" />
-    <Content Include="Views\ListItem\Edit.cshtml" />
-    <Content Include="Views\ListItem\Index.cshtml" />
+    <Content Include="Views\ShoppingListItem\Create.cshtml" />
+    <Content Include="Views\ShoppingListItem\Delete.cshtml" />
+    <Content Include="Views\ShoppingListItem\Details.cshtml" />
+    <Content Include="Views\ShoppingListItem\Edit.cshtml" />
+    <Content Include="Views\ShoppingListItem\Index.cshtml" />
+    <Content Include="Views\ShoppingList\Create.cshtml" />
+    <Content Include="Views\ShoppingList\Delete.cshtml" />
+    <Content Include="Views\ShoppingList\Details.cshtml" />
+    <Content Include="Views\ShoppingList\Edit.cshtml" />
+    <Content Include="Views\ShoppingList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -288,17 +295,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ShoppingList.Data\ShoppingList.Data.csproj">
+    <ProjectReference Include="..\ShoppingList.Data\Shopping_List.Data.csproj">
       <Project>{7891ec7b-0b80-4bb2-be05-f0debfdecc37}</Project>
-      <Name>ShoppingList.Data</Name>
+      <Name>Shopping_List.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ShoppingList.Models\ShoppingList.Models.csproj">
+    <ProjectReference Include="..\ShoppingList.Models\Shopping_List.Models.csproj">
       <Project>{3e3f345e-7e05-4bde-a4d8-0720ffb683e9}</Project>
-      <Name>ShoppingList.Models</Name>
+      <Name>Shopping_List.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ShoppingList.Services\ShoppingList.Services.csproj">
+    <ProjectReference Include="..\ShoppingList.Services\Shopping_List.Services.csproj">
       <Project>{1ae591a2-642b-46a2-9213-b89ce2645c3c}</Project>
-      <Name>ShoppingList.Services</Name>
+      <Name>Shopping_List.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

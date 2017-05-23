@@ -11,8 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Shopping_List.Models;
-using ShoppingList.Models;
-using ShoppingList.Data;
+using Shopping_List.Data;
 
 namespace Shopping_List
 {

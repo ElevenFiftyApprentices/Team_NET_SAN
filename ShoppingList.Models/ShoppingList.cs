@@ -4,15 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace ShoppingList.Models
+namespace Shopping_List.Models
 {
-    //Changed from "ShoppingList" to "List" because 'ShoppingList' is in the namespace and couldn't be used again
-    public class List
+    public class ShoppingList
     {
         [Key]
         public int Id { get; set; }
 
-        public Guid UserId { get; set; }
+        public int UserId { get; set; }
 
         public string Name { get; set; }
 
@@ -21,6 +20,6 @@ namespace ShoppingList.Models
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset ModifiedUtc { get; set; }
-
+        
     }
 }
