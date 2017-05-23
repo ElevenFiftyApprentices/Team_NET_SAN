@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Shopping_List.Models;
+using Shopping_List.Data;
 
 namespace Shopping_List.Controllers
 {

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Shopping_List.Models;
+using Shopping_List.Data;
 
 namespace Shopping_List.Controllers
 {

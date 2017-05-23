@@ -3,8 +3,11 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Shopping_List.Models;
+using System.Data.Entity.ModelConfiguration;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace Shopping_List.Models
+namespace Shopping_List.Data
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -30,8 +33,41 @@ namespace Shopping_List.Models
             return new ApplicationDbContext();
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Conventions
+                .Remove<PluralizingTableNameConvention>();
+
+            modelBuilder
+                .Configurations
+                .Add(new IdentityUserLoginConfiguration())
+                .Add(new IdentityUserRoleConfiguration());
+        }
+
+        public DbSet<ShoppingList> ShoppingLists { get; set; }
+
+        public DbSet<ShoppingListItem> ShoppingListItems { get; set; }
+    }
+
+    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
+    {
+        public IdentityUserRoleConfiguration()
+        {
+            HasKey(iur => iur.RoleId);
+        }
+    }
+
+    public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+    {
+        public IdentityUserLoginConfiguration()
+        {
+            HasKey(iur => iur.UserId);
+        }
+
         public System.Data.Entity.DbSet<Shopping_List.Models.ShoppingList> ShoppingLists { get; set; }
 
         public System.Data.Entity.DbSet<Shopping_List.Models.ShoppingListItem> ShoppingListItems { get; set; }
+
     }
 }
