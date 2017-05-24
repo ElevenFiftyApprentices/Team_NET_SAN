@@ -31,7 +31,9 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.IsChecked)
+
+            @Html.CheckBoxFor(model => model.IsChecked, new { @class = "itemCheckBoxes" })
+
         </dd>
 
         <dt>
@@ -56,3 +58,35 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+@section scripts {
+    <script language="javascript" text="text/javascript">
+        $(document)
+            .ready(function() {
+                $("input.itemCheckBoxes") //css selector to find elements in page
+                    .css({ "cursor": "pointer" })
+                    .click(function(e) {
+                        var target = $(e.target);
+                        var Id = target.attr("id");
+
+                        $.ajax({
+                                method: "POST",
+                                url: "/shoppinglist/updatecheckbox",
+                                data: {
+                                    ShoppingListItemId: shoppingListItemId,
+                                    IsChecked: target.is(":checked")
+                                }
+                            })
+                            .done(function(r) {
+                                console.log("finished setting IsChecked - " + r);
+                            })
+                            .fail(function(r) {
+                                alert("Failed to change status");
+                            });
+
+
+                    });
+            });
+
+    </script>
+}
