@@ -44,10 +44,10 @@ namespace Shopping_List.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             ViewBag.ShoppingListId = id;
-                ViewBag.ListTitle = db.ShoppingLists.Find(id).Name;
-                ViewBag.ShoppingListColor = db.ShoppingLists.Find(id).Color;
-                return View(db.ShoppingListItems.Where(s => s.ShoppingListId == id));
-            
+            ViewBag.ListTitle = db.ShoppingLists.Find(id).Name;
+            ViewBag.ShoppingListColor = db.ShoppingLists.Find(id).Color;
+            return View(db.ShoppingListItems.Where(s => s.ShoppingListId == id));
+
         }
 
         //POST: UpdateCheckBox
@@ -61,6 +61,31 @@ namespace Shopping_List.Controllers
             //Save changes
             db.SaveChanges();
             return Json("success");
+        }
+
+        //GET: ShoppingListItem/Create
+        public ActionResult CreateItem(int? id)
+        {
+            ViewBag.ShoppingListId = id;
+            ViewBag.ListTitle = db.ShoppingLists.Find(id).Name;
+            return View();
+        }
+
+        //POST: ShoppingListItem/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateItem(
+            [Bind(Include = "Id,ShoppingListId,Contents,Priorit,Note")] ShoppingListItem shoppingListItem, int id)
+        {
+            if (ModelState.IsValid)
+            {
+                shoppingListItem.ShoppingListId = id;
+                db.ShoppingListItems.Add(shoppingListItem);
+                db.SaveChanges();
+                return RedirectToAction("ViewItem", new {id});
+            }
+
+            return View();
         }
 
         // GET: ShoppingList/Create
