@@ -36,6 +36,20 @@ namespace Shopping_List.Controllers
             return View(shoppingList);
         }
 
+        //GET: ViewItem/View
+        public ActionResult ViewItem(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ViewBag.ShoppingListId = id;
+                ViewBag.ListTitle = db.ShoppingLists.Find(id).Name;
+                ViewBag.ShoppingListColor = db.ShoppingLists.Find(id).Color;
+                return View(db.ShoppingListItems.Where(s => s.ShoppingListId == id));
+            
+        }
+
         //POST: UpdateCheckBox
         [HttpPost]
         //[ValidateAntiForgeryToken]  //referencing id in order to update IsChecked,creating a new instance of class and calling it "shoppingListItem"
@@ -56,8 +70,6 @@ namespace Shopping_List.Controllers
         }
 
         // POST: ShoppingList/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,UserId,Name,Color,CreatedUtc,ModifiedUtc")] ShoppingList shoppingList)
