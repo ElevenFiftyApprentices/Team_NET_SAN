@@ -275,6 +275,8 @@
     <Content Include="Views\ShoppingList\Details.cshtml" />
     <Content Include="Views\ShoppingList\Edit.cshtml" />
     <Content Include="Views\ShoppingList\Index.cshtml" />
+    <Content Include="Views\ShoppingList\ViewItem.cshtml" />
+    <Content Include="Views\ShoppingList\CreateItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

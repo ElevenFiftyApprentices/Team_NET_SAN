@@ -1,11 +1,11 @@
 ﻿
 body {
-                               padding-top: 90px;
-                               padding-bottom: 20px;
-                               background-color: #FFDD73;
-                               font-family: Comic Sans;
-                               background-image: url(../img/jumbo-photo-1.jpg);
-                           }
+    padding-top: 90px;
+    padding-bottom: 20px;
+    background-color: #FFDD73;
+    font-family: Comic Sans;
+    /*background-image: url(../img/jumbo-photo-1.jpg);*/
+    }
 
 a {
     color: white;
@@ -205,6 +205,16 @@ a {
     text-align: center;
     text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     margin-bottom: 15px;
+}
+
+/*Shopping List View*/
+
+#list-view {
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 45px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
