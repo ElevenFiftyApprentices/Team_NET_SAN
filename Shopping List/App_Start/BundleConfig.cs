@@ -25,7 +25,7 @@ namespace Shopping_List
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/css/bootstrap.css",
-                      "~/Content/css/site.css"));
+                      "~/Content/css/Site.css"));
         }
     }
 }
