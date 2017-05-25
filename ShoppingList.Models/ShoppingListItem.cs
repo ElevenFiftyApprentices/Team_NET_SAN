@@ -25,6 +25,7 @@ namespace Shopping_List.Models
         [ForeignKey("ShoppingList")]
         public int ShoppingListId { get; set; }
 
+        [Display(Name = "Item")]
         public string Contents { get; set; }
 
         [DefaultValue(false)]
@@ -36,8 +37,10 @@ namespace Shopping_List.Models
         [MaxLength(25)]
         public string Note { get; set; }
 
+        [Display(Name = "Date Created")]
         public DateTimeOffset CreatedUtc { get; set; }
 
+        [Display(Name = "Date Updated")]
         public DateTimeOffset ModifiedUtc { get; set; }
 
         public override string ToString()
