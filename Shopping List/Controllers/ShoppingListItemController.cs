@@ -59,9 +59,33 @@ namespace Shopping_List.Controllers
             return View(shoppingListItem);
         }
 
+        public ActionResult ClearItem()
+        {
+            return View(db.ShoppingLists.Where(i => i.IsDeleted == true));
+        }
+
+        //HERE IS MY CLEAR ITEM ATTEMPT PAUL
+         [HttpPost, ActionName("ClearItem")]
+         [ValidateAntiForgeryToken]
+         public ActionResult ClearAllItems()
+         {
+            IEnumerable<ShoppingList> ShoppingListItem = db.ShoppingLists.Where(i => i.IsDeleted == true);
+            foreach (var Item in ShoppingListItem)
+            {
+                db.ShoppingLists.Remove(Item);
+            }
+            db.SaveChanges(); 
+            
+            return RedirectToAction("Index");
+         }
+
+        
+
+
+
         // GET: ShoppingListItem/Edit/5
         public ActionResult Edit(int? id)
-        {
+            {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -72,7 +96,7 @@ namespace Shopping_List.Controllers
                 return HttpNotFound();
             }
             return View(shoppingListItem);
-        }
+            }
 
         // POST: ShoppingListItem/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
