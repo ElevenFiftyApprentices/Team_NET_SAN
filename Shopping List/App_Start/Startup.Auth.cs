@@ -56,13 +56,13 @@ namespace Shopping_List
             //   consumerSecret: "");
 
             //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            //   appId: "215218552323236",
+            //   appSecret: "2e2206f74cb4bd95b4a104881d74c595");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
-            //    ClientId = "",
-            //    ClientSecret = ""
+            //    ClientId = "1061944125521-trr9o1lcas10im5fn9ab0mh0i2aumd7u.apps.googleusercontent.com",
+            //    ClientSecret = "zL_FnXfeQVvEEombxfAZqcCJ"
             //});
         }
     }
