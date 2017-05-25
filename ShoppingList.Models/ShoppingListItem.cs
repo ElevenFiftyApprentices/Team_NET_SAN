@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -18,8 +19,10 @@ namespace Shopping_List.Models
     }
     public class ShoppingListItem
     {
+        [Key]
         public int Id { get; set; }
 
+        [ForeignKey("ShoppingList")]
         public int ShoppingListId { get; set; }
 
         public string Contents { get; set; }
@@ -36,6 +39,11 @@ namespace Shopping_List.Models
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset ModifiedUtc { get; set; }
+
+        public override string ToString()
+        {
+            return $"[{Id}]";
+        }
 
         public virtual ICollection<ShoppingList> ShoppingList { get; set; }
     }

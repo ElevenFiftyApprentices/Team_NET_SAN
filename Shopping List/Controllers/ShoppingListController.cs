@@ -43,10 +43,10 @@ namespace Shopping_List.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ViewBag.ShoppingListId = id;
+            ViewBag.Id = id;
             ViewBag.ListTitle = db.ShoppingLists.Find(id).Name;
             ViewBag.ShoppingListColor = db.ShoppingLists.Find(id).Color;
-            return View(db.ShoppingListItems.Where(s => s.ShoppingListId == id));
+            return View(db.ShoppingListItems.Where(s => s.Id == id));
 
         }
 
@@ -64,9 +64,9 @@ namespace Shopping_List.Controllers
         }
 
         //GET: ShoppingListItem/Create
-        public ActionResult CreateItem(int? id)
+        public ActionResult CreateItem(int id)
         {
-            ViewBag.ShoppingListId = id;
+            ViewBag.Id = id;
             ViewBag.ListTitle = db.ShoppingLists.Find(id).Name;
             return View();
         }
@@ -75,11 +75,11 @@ namespace Shopping_List.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateItem(
-            [Bind(Include = "Id,ShoppingListId,Contents,Priorit,Note")] ShoppingListItem shoppingListItem, int id)
+            [Bind(Include = "Id,ShoppingListId,Contents,Priority,Note")] ShoppingListItem shoppingListItem, int id)
         {
             if (ModelState.IsValid)
             {
-                shoppingListItem.ShoppingListId = id;
+                shoppingListItem.Id = id;
                 db.ShoppingListItems.Add(shoppingListItem);
                 db.SaveChanges();
                 return RedirectToAction("ViewItem", new {id});
