@@ -47,10 +47,11 @@ namespace Shopping_List.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ShoppingListId,Contents,IsChecked,CreatedUtc,ModifiedUtc")] ShoppingListItem shoppingListItem)
+        public ActionResult Create([Bind(Include = "Id,ShoppingListId,Contents,IsChecked,CreatedUtc,ModifiedUtc")] ShoppingListItem shoppingListItem, int shoppingListId)
         {
             if (ModelState.IsValid)
             {
+                shoppingListItem.ShoppingListId = 26;
                 db.ShoppingListItems.Add(shoppingListItem);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -59,25 +60,25 @@ namespace Shopping_List.Controllers
             return View(shoppingListItem);
         }
 
-        public ActionResult ClearItem()
-        {
-            return View(db.ShoppingLists.Where(i => i.IsDeleted == true));
-        }
+        //public ActionResult ClearItem()
+        //{
+        //    return View(db.ShoppingLists.Where(i => i.IsDeleted == true));
+        //}
 
-        //HERE IS MY CLEAR ITEM ATTEMPT PAUL
-         [HttpPost, ActionName("ClearItem")]
-         [ValidateAntiForgeryToken]
-         public ActionResult ClearAllItems()
-         {
-            IEnumerable<ShoppingList> ShoppingListItem = db.ShoppingLists.Where(i => i.IsDeleted == true);
-            foreach (var Item in ShoppingListItem)
-            {
-                db.ShoppingLists.Remove(Item);
-            }
-            db.SaveChanges(); 
+        ////HERE IS MY CLEAR ITEM ATTEMPT PAUL
+        // [HttpPost, ActionName("ClearItem")]
+        // [ValidateAntiForgeryToken]
+        // public ActionResult ClearAllItems()
+        // {
+        //    IEnumerable<ShoppingList> ShoppingListItem = db.ShoppingLists.Where(i => i.IsDeleted == true);
+        //    foreach (var Item in ShoppingListItem)
+        //    {
+        //        db.ShoppingLists.Remove(Item);
+        //    }
+        //    db.SaveChanges(); 
             
-            return RedirectToAction("Index");
-         }
+        //    return RedirectToAction("Index");
+        // }
 
         
 
@@ -115,16 +116,16 @@ namespace Shopping_List.Controllers
         }
 
         // GET: ShoppingListItem/Delete/5
-        public ActionResult Delete(int? id, bool? saveChangesError = false)
+        public ActionResult Delete(int? id) /*bool? saveChangesError = false*/
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            if (saveChangesError.GetValueOrDefault())
-            {
-                ViewBag.ErrorMessage = "Delete failed.";
-            }
+            //if (saveChangesError.GetValueOrDefault())
+            //{
+            //    ViewBag.ErrorMessage = "Delete failed.";
+            //}
             ShoppingListItem shoppingListItem = db.ShoppingListItems.Find(id);
             if (shoppingListItem == null)
             {
@@ -141,7 +142,7 @@ namespace Shopping_List.Controllers
             ShoppingListItem shoppingListItem = db.ShoppingListItems.Find(id);
             db.ShoppingListItems.Remove(shoppingListItem);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("ViewItem", "ShoppingList", new {id = shoppingListItem.Id});
         }
 
         protected override void Dispose(bool disposing)

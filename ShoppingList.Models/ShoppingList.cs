@@ -14,6 +14,9 @@ namespace Shopping_List.Models
 
         public int UserId { get; set; }
 
+        [Required]
+        [MinLength(2)]
+        [MaxLength(25)]
         public string Name { get; set; }
 
         [RegularExpression(@"^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$", ErrorMessage = "Please enter a Hex Value.")]

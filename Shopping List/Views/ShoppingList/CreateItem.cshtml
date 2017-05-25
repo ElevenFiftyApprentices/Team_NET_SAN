@@ -3,6 +3,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    @Html.Hidden("shoppingListId", (int)ViewBag.Id)
 
     <div class="form-horizontal">
         <h2>@ViewBag.ListTitle</h2>
