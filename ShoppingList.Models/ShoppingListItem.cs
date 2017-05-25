@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -18,13 +19,19 @@ namespace Shopping_List.Models
     }
     public class ShoppingListItem
     {
+        [Key]
         public int Id { get; set; }
 
+        [ForeignKey("ShoppingList")]
         public int ShoppingListId { get; set; }
 
+
+        [Required]
+        [MinLength(2)]
+        [MaxLength(25)]
         public string Contents { get; set; }
 
-        [DefaultValue(false)]
+        [Display(Name = "In Cart?")]
         public bool IsChecked { get; set; }
 
 
@@ -34,9 +41,15 @@ namespace Shopping_List.Models
         [MaxLength(25)]
         public string Note { get; set; }
 
+        [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset ModifiedUtc { get; set; }
+
+        public override string ToString()
+        {
+            return $"[{Id}]";
+        }
 
         public virtual ICollection<ShoppingList> ShoppingList { get; set; }
     }

@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Shopping_List.Models.ShoppingListItem>
 
 
-<h2>@ViewBag.ListTitle Shopping List</h2>
+<h2 id="view-item-heading">@ViewBag.ListTitle Shopping List</h2>
 
 <p>
     @Html.ActionLink("New Item", "CreateItem", new { id = ViewBag.Id }, new { @class = "btn btn-default" })
 </p>
 
-<table class="view-item-table">
+<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.IsChecked)
