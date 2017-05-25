@@ -11,6 +11,7 @@ using Shopping_List.Data;
 
 namespace Shopping_List.Controllers
 {
+    [Authorize]
     public class ShoppingListController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -46,6 +47,7 @@ namespace Shopping_List.Controllers
             ViewBag.Id = id;
             ViewBag.ListTitle = db.ShoppingLists.Find(id).Name;
             ViewBag.ShoppingListColor = db.ShoppingLists.Find(id).Color;
+
             //return View(db.ShoppingListItems.Where(s => s.Id == id));
             return View(db.ShoppingListItems.Where(s => s.ShoppingListId == id));
 
@@ -76,6 +78,7 @@ namespace Shopping_List.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateItem(
+
             [Bind(Include = "Id,ShoppingListId,Contents,Priority,Note")] ShoppingListItem shoppingListItem, int shoppingListId)
         {
             if (ModelState.IsValid)

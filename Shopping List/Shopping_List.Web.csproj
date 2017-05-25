@@ -306,10 +306,6 @@
       <Project>{3e3f345e-7e05-4bde-a4d8-0720ffb683e9}</Project>
       <Name>Shopping_List.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ShoppingList.Services\Shopping_List.Services.csproj">
-      <Project>{1ae591a2-642b-46a2-9213-b89ce2645c3c}</Project>
-      <Name>Shopping_List.Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

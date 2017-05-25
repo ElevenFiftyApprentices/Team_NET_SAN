@@ -20,7 +20,6 @@ namespace Shopping_List.Data
             return userIdentity;
         }
     }
-
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -33,41 +32,9 @@ namespace Shopping_List.Data
             return new ApplicationDbContext();
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder
-                .Conventions
-                .Remove<PluralizingTableNameConvention>();
-
-            modelBuilder
-                .Configurations
-                .Add(new IdentityUserLoginConfiguration())
-                .Add(new IdentityUserRoleConfiguration());
-        }
 
         public DbSet<ShoppingList> ShoppingLists { get; set; }
 
         public DbSet<ShoppingListItem> ShoppingListItems { get; set; }
-    }
-
-    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
-    {
-        public IdentityUserRoleConfiguration()
-        {
-            HasKey(iur => iur.RoleId);
-        }
-    }
-
-    public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
-    {
-        public IdentityUserLoginConfiguration()
-        {
-            HasKey(iur => iur.UserId);
-        }
-
-        public System.Data.Entity.DbSet<Shopping_List.Models.ShoppingList> ShoppingLists { get; set; }
-
-        public System.Data.Entity.DbSet<Shopping_List.Models.ShoppingListItem> ShoppingListItems { get; set; }
-
     }
 }
