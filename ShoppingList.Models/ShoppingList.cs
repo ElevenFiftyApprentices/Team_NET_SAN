@@ -18,6 +18,9 @@ namespace Shopping_List.Models
 
         public string Color { get; set; }
 
+        [DefaultValue(false)]
+        public bool IsDeleted { get; set; }
+
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset ModifiedUtc { get; set; }

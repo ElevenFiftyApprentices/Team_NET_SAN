@@ -27,6 +27,7 @@ namespace Shopping_List.Models
         [DefaultValue(false)]
         public bool IsChecked { get; set; }
 
+
         public Priority Priority { get; set; }
 
         [MinLength(2)]
