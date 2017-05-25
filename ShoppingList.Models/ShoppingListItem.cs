@@ -34,6 +34,7 @@ namespace Shopping_List.Models
         [Display(Name = "In Cart?")]
         public bool IsChecked { get; set; }
 
+
         public Priority Priority { get; set; }
 
         [MinLength(2)]

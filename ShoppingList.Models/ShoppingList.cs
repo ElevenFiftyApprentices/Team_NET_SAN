@@ -21,8 +21,7 @@ namespace Shopping_List.Models
 
         [RegularExpression(@"^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$", ErrorMessage = "Please enter a Hex Value.")]
         public string Color { get; set; }
-
-        [Display(Name = "Created")]
+      
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset? ModifiedUtc { get; set; }
