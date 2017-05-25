@@ -25,9 +25,13 @@ namespace Shopping_List.Models
         [ForeignKey("ShoppingList")]
         public int ShoppingListId { get; set; }
 
+
+        [Required]
+        [MinLength(2)]
+        [MaxLength(25)]
         public string Contents { get; set; }
 
-        [DefaultValue(false)]
+        [Display(Name = "In Cart?")]
         public bool IsChecked { get; set; }
 
         public Priority Priority { get; set; }
@@ -36,6 +40,7 @@ namespace Shopping_List.Models
         [MaxLength(25)]
         public string Note { get; set; }
 
+        [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset ModifiedUtc { get; set; }

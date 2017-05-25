@@ -91,16 +91,16 @@ namespace Shopping_List.Controllers
         }
 
         // GET: ShoppingListItem/Delete/5
-        public ActionResult Delete(int? id, bool? saveChangesError = false)
+        public ActionResult Delete(int? id) /*bool? saveChangesError = false*/
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            if (saveChangesError.GetValueOrDefault())
-            {
-                ViewBag.ErrorMessage = "Delete failed.";
-            }
+            //if (saveChangesError.GetValueOrDefault())
+            //{
+            //    ViewBag.ErrorMessage = "Delete failed.";
+            //}
             ShoppingListItem shoppingListItem = db.ShoppingListItems.Find(id);
             if (shoppingListItem == null)
             {
@@ -117,7 +117,7 @@ namespace Shopping_List.Controllers
             ShoppingListItem shoppingListItem = db.ShoppingListItems.Find(id);
             db.ShoppingListItems.Remove(shoppingListItem);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("ViewItem", "ShoppingList", new {id = shoppingListItem.Id});
         }
 
         protected override void Dispose(bool disposing)

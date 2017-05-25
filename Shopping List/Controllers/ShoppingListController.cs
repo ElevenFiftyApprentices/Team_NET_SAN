@@ -37,7 +37,7 @@ namespace Shopping_List.Controllers
         }
 
         //GET: ViewItem/View
-        public ActionResult ViewItem(int? id)
+        public ActionResult ViewItem(ShoppingListItem shoppingListItem, int id)
         {
             if (id == null)
             {
@@ -79,10 +79,13 @@ namespace Shopping_List.Controllers
         {
             if (ModelState.IsValid)
             {
-                shoppingListItem.Id = id;
+                //shoppingListItem.Id = id;
+                shoppingListItem.ShoppingListId = id;
                 db.ShoppingListItems.Add(shoppingListItem);
+                ShoppingList mySL = db.ShoppingLists.Where(s => s.Id == id).FirstOrDefault();
+                mySL.ShoppingListItems.Add(shoppingListItem);
                 db.SaveChanges();
-                return RedirectToAction("ViewItem", new {id});
+                return RedirectToAction("ViewItem", new { id });
             }
 
             return View();
