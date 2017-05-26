@@ -17,6 +17,12 @@ a {
     padding-right: 15px;
 }
 
+.navbar-brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e8484f;
+}
+
 /*JUMBOTRON*/
 
 .jumbotron {
