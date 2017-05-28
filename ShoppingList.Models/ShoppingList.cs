@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Dynamic;
 using System.Linq;
 using System.Web;
 
@@ -30,6 +31,10 @@ namespace Shopping_List.Models
         {
             return $"[{Id}] {Name}";
         }
+
+
+        [DefaultValue(false)]
+        public bool IsDeleted { get; set; }
 
         public virtual ICollection<ShoppingListItem> ShoppingListItems { get; set; }
     }

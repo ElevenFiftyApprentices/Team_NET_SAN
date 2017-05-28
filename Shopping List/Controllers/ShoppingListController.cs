@@ -147,6 +147,27 @@ namespace Shopping_List.Controllers
             return View(shoppingList);
         }
 
+        //GET Clear Item?
+        public ActionResult ClearItem()
+        {
+            return View(db.ShoppingLists.Where(i => i.IsDeleted == true));
+        }
+
+        //POST Clear Item
+        [HttpPost, ActionName("ClearItem")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ClearAllItems()
+        {
+            IEnumerable<ShoppingList> ShoppingListItem = db.ShoppingLists.Where(i => i.IsDeleted == true);
+            foreach (var Item in ShoppingListItem)
+            {
+                db.ShoppingLists.Remove(Item);
+            }
+            db.SaveChanges();
+
+            return RedirectToAction("ViewItem");
+        }
+
         // GET: ShoppingList/Delete/5
         public ActionResult Delete(int? id, bool? saveChangesError = false)
         {

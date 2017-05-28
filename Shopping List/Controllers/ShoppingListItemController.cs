@@ -60,27 +60,11 @@ namespace Shopping_List.Controllers
             return View(shoppingListItem);
         }
 
-        //public ActionResult ClearItem()
-        //{
-        //    return View(db.ShoppingLists.Where(i => i.IsDeleted == true));
-        //}
 
-        ////HERE IS MY CLEAR ITEM ATTEMPT PAUL
-        // [HttpPost, ActionName("ClearItem")]
-        // [ValidateAntiForgeryToken]
-        // public ActionResult ClearAllItems()
-        // {
-        //    IEnumerable<ShoppingList> ShoppingListItem = db.ShoppingLists.Where(i => i.IsDeleted == true);
-        //    foreach (var Item in ShoppingListItem)
-        //    {
-        //        db.ShoppingLists.Remove(Item);
-        //    }
-        //    db.SaveChanges(); 
-            
-        //    return RedirectToAction("Index");
-        // }
 
-        
+  
+
+
 
 
 
@@ -137,9 +121,9 @@ namespace Shopping_List.Controllers
         // POST: ShoppingListItem/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int Id)
         {
-            ShoppingListItem shoppingListItem = db.ShoppingListItems.Find(id);
+            ShoppingListItem shoppingListItem = db.ShoppingListItems.Find(Id);
             db.ShoppingListItems.Remove(shoppingListItem);
             db.SaveChanges();
             return RedirectToAction("ViewItem", "ShoppingList", new {id = shoppingListItem.Id});

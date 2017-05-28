@@ -7,6 +7,11 @@ body {
     /*background-image: url();*/
     }
 
+.text-danger {
+    color: white;
+    font-size: 20px;
+}
+
 a {
     color: white;
 }
@@ -243,6 +248,28 @@ a {
     text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     margin-bottom: 45px;
 }
+
+/*New Item Page*/
+
+#create-item-heading {
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 45px;
+}
+
+
+/*Delete Page*/
+
+#delete-heading {
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 45px;
+}
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
