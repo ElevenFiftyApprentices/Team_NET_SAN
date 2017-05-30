@@ -66,16 +66,16 @@
                     .click(function (e) {
                         var target = $(e.target);
                         var shoppingListItemId = target.attr("id");
-
                         $.ajax({
-                            method: "POST",
-                            url: "/shoppinglist/updatecheckbox",
-                            data: {
-                                Id: Id,
-                                IsChecked: target.is(":checked")
-                            }
-                        })
-                            .done(function (r) {
+
+                                method: "POST",
+                                url: "/ShoppingList/UpdateCheckbox",
+                                data: {
+                                    Id: shoppingListItemId,
+                                    IsChecked: target.is(":checked")
+                                }
+                            })
+                            .done(function(r) {
                                 console.log("finished setting IsChecked - " + r);
                             })
                             .fail(function (r) {
