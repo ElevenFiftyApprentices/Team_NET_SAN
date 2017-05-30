@@ -65,13 +65,13 @@
                     .css({ "cursor": "pointer" })
                     .click(function(e) {
                         var target = $(e.target);
-                        var Id = target.attr("id");
+                        var shoppingListItemId = target.attr("id");
 
                         $.ajax({
                                 method: "POST",
-                                url: "/shoppinglist/updatecheckbox",
+                                url: "/ShoppingList/UpdateCheckbox",
                                 data: {
-                                    ShoppingListItemId: shoppingListItemId,
+                                    Id: shoppingListItemId,
                                     IsChecked: target.is(":checked")
                                 }
                             })

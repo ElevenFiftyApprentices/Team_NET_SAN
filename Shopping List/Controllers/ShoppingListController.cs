@@ -45,8 +45,8 @@ namespace Shopping_List.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             ViewBag.Id = id;
-            ViewBag.ListTitle = db.ShoppingLists.Find(id).Name;
-            ViewBag.ShoppingListColor = db.ShoppingLists.Find(id).Color;
+            ViewBag.ListTitle = db.ShoppingLists.Find(id);
+            //ViewBag.ShoppingListColor = db.ShoppingLists.Find(id).Color;
 
             //return View(db.ShoppingListItems.Where(s => s.Id == id));
             return View(db.ShoppingListItems.Where(s => s.ShoppingListId == id));

@@ -36,6 +36,19 @@ namespace Shopping_List.Controllers
             return View(shoppingListItem);
         }
 
+        //POST: UpdateCheckBox
+        [HttpPost]
+        //[ValidateAntiForgeryToken]  //referencing id in order to update IsChecked,creating a new instance of class and calling it "shoppingListItem"
+        public ActionResult UpdateCheckbox([Bind(Include = "Id, IsChecked")] ShoppingListItem shoppingListItem)
+        {   //pulling data from db and holding it in memory
+            var item = db.ShoppingListItems.Find(shoppingListItem.Id);
+            //referencing IsChecked on item and converting it to IsChecked on shoppingListItem
+            item.IsChecked = shoppingListItem.IsChecked;
+            //Save changes
+            db.SaveChanges();
+            return Json("success");
+        }
+
         // GET: ShoppingListItem/Create
         public ActionResult Create()
         {
@@ -115,9 +128,24 @@ namespace Shopping_List.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             ShoppingListItem shoppingListItem = db.ShoppingListItems.Find(id);
-            db.ShoppingListItems.Remove(shoppingListItem);
-            db.SaveChanges();
-            return RedirectToAction("Index", "ShoppingList", new {id = shoppingListItem.Id});
+
+            using (var context = new ApplicationDbContext())
+            {
+                var query = from n in context.ShoppingListItems
+                            where n.Id == id
+                            select n.ShoppingListId;
+                var list = query.ToList();
+                int listId = list.ElementAt(0);
+
+
+                db.ShoppingListItems.Remove(shoppingListItem);
+                db.SaveChanges();
+
+                return RedirectToAction("ViewItem", "ShoppingList", new { id = listId });
+            }
+                
+            
+            
         }
 
         //GET Clear Item?
