@@ -2,10 +2,15 @@
 body {
     padding-top: 90px;
     padding-bottom: 20px;
-    background-color: #FFDD73;
+    background-color: #6fb6de;
     font-family: Comic Sans;
-    /*background-image: url(../img/jumbo-photo-1.jpg);*/
+    /*background-image: url();*/
     }
+
+.text-danger {
+    color: white;
+    font-size: 20px;
+}
 
 a {
     color: white;
@@ -17,14 +22,21 @@ a {
     padding-right: 15px;
 }
 
+.navbar-brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e8484f;
+}
+
 /*JUMBOTRON*/
 
 .jumbotron {
-    background-image: url(../img/jumbo-photo-3.jpeg);
+    background-image: url(../img/jumbo-photo-1.jpg);
+    height: 350px;
 }
 
 #jumbo-heading {
-    font-size: 80px;
+    font-size: 120px;
     color: white;
     font-family: Comic Sans;
     font-weight: bold;
@@ -54,7 +66,7 @@ a {
 
 #col-1 {
     text-align: center;
-    background-color: #476dd5;
+    background-color: #e8484f;
     color: white;
     opacity: 0.85;
     border-radius: 15px;
@@ -63,7 +75,7 @@ a {
 
 #col-2 {
     text-align: center;
-    background-color: #476dd5;
+    background-color: #e8484f;
     color: white;
     opacity: 0.85;
     border-radius: 15px;
@@ -72,7 +84,7 @@ a {
 
 #col-3 {
     text-align: center;
-    background-color: #476dd5;
+    background-color: #e8484f;
     color: white;
     opacity: 0.85;
     border-radius: 15px;
@@ -89,7 +101,7 @@ a {
 }
 
 #about-container {
-    background-color: #476dd5;
+    background-color: #e8484f;
     opacity: 0.85;
     width: 60%;
     margin: auto;
@@ -120,7 +132,7 @@ a {
 }
 
 #nathan-contact-info {
-    background-color: #476dd5;
+    background-color: #e8484f;
     opacity: 0.85;
     color: white;
     font-size: 15px;
@@ -130,7 +142,7 @@ a {
 }
 
 #adam-contact-info {
-    background-color: #476dd5;
+    background-color: #e8484f;
     opacity: 0.85;
     color: white;
     font-size: 15px;
@@ -139,7 +151,7 @@ a {
 }
 
 #shelby-contact-info {
-    background-color: #476dd5;
+    background-color: #e8484f;
     opacity: 0.85;
     color: white;
     font-size: 15px;
@@ -157,7 +169,7 @@ a {
 }
 
 #register-form {
-    background-color: #476dd5;
+    background-color: #e8484f;
     opacity: 0.85;
     padding-top: 25px;
     padding-bottom: 25px;
@@ -187,7 +199,7 @@ a {
 }
 
 #login-form {
-    background-color: #476dd5;
+    background-color: #e8484f;
     opacity: 0.85;
     padding-top: 25px;
     padding-bottom: 25px;
@@ -216,6 +228,48 @@ a {
     text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     margin-bottom: 45px;
 }
+
+/*Create New List View*/
+
+#create-heading {
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 45px;
+}
+
+/*View Item List*/
+
+#view-item-heading {
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 45px;
+}
+
+/*New Item Page*/
+
+#create-item-heading {
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 45px;
+}
+
+
+/*Delete Page*/
+
+#delete-heading {
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 45px;
+}
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 

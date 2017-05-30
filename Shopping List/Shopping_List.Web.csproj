@@ -220,6 +220,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\SansShoppingListWeb - Web Deploy.pubxml" />
     <None Include="Views\Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Views\Scripts\jquery-1.10.2.js" />
     <Content Include="Views\Scripts\jquery-1.10.2.min.js" />
@@ -277,6 +278,7 @@
     <Content Include="Views\ShoppingList\Index.cshtml" />
     <Content Include="Views\ShoppingList\ViewItem.cshtml" />
     <Content Include="Views\ShoppingList\CreateItem.cshtml" />
+    <Content Include="Views\ShoppingList\ClearItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -305,10 +307,6 @@
       <Project>{3e3f345e-7e05-4bde-a4d8-0720ffb683e9}</Project>
       <Name>Shopping_List.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ShoppingList.Services\Shopping_List.Services.csproj">
-      <Project>{1ae591a2-642b-46a2-9213-b89ce2645c3c}</Project>
-      <Name>Shopping_List.Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -324,7 +322,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53157</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

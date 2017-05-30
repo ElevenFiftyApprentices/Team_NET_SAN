@@ -11,6 +11,7 @@ using Shopping_List.Data;
 
 namespace Shopping_List.Controllers
 {
+    [Authorize]
     public class ShoppingListController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -46,7 +47,9 @@ namespace Shopping_List.Controllers
             ViewBag.Id = id;
             ViewBag.ListTitle = db.ShoppingLists.Find(id).Name;
             ViewBag.ShoppingListColor = db.ShoppingLists.Find(id).Color;
-            return View(db.ShoppingListItems.Where(s => s.Id == id));
+
+            //return View(db.ShoppingListItems.Where(s => s.Id == id));
+            return View(db.ShoppingListItems.Where(s => s.ShoppingListId == id));
 
         }
 
@@ -75,14 +78,18 @@ namespace Shopping_List.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateItem(
-            [Bind(Include = "Id,ShoppingListId,Contents,Priority,Note")] ShoppingListItem shoppingListItem, int id)
+
+            [Bind(Include = "Id,ShoppingListId,Contents,Priority,Note")] ShoppingListItem shoppingListItem, int shoppingListId)
         {
             if (ModelState.IsValid)
             {
-                shoppingListItem.Id = id;
+                //shoppingListItem.Id = id;
+                shoppingListItem.ShoppingListId = shoppingListId;
                 db.ShoppingListItems.Add(shoppingListItem);
+                ShoppingList mySL = db.ShoppingLists.Where(s => s.Id == shoppingListId).FirstOrDefault();
+                mySL.ShoppingListItems.Add(shoppingListItem);
                 db.SaveChanges();
-                return RedirectToAction("ViewItem", new {id});
+                return RedirectToAction("ViewItem", new { id=shoppingListId });
             }
 
             return View();
@@ -138,6 +145,27 @@ namespace Shopping_List.Controllers
                 return RedirectToAction("Index");
             }
             return View(shoppingList);
+        }
+
+        //GET Clear Item?
+        public ActionResult ClearItem()
+        {
+            return View(db.ShoppingLists.Where(i => i.IsDeleted == true));
+        }
+
+        //POST Clear Item
+        [HttpPost, ActionName("ClearItem")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ClearAllItems()
+        {
+            IEnumerable<ShoppingList> ShoppingListItem = db.ShoppingLists.Where(i => i.IsDeleted == true);
+            foreach (var Item in ShoppingListItem)
+            {
+                db.ShoppingLists.Remove(Item);
+            }
+            db.SaveChanges();
+
+            return RedirectToAction("ViewItem");
         }
 
         // GET: ShoppingList/Delete/5

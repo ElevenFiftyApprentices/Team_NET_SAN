@@ -1,0 +1,22 @@
+﻿@model Shopping_List.Models.ShoppingListItem
+
+@{
+    ViewBag.Title = "ClearItem";
+}
+
+<h2>Clear All</h2>
+
+<h3>
+    Are you sure you want to clear all items on this list?
+</h3>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Clear All" class="btn btn-default" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}

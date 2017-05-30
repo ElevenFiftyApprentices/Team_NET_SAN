@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Shopping_List.Models.ShoppingListItem>
 
 
-<h2>@ViewBag.ListTitle Shopping List</h2>
+<h2 id="view-item-heading">@ViewBag.ListTitle Shopping List</h2>
 
 <p>
-    @Html.ActionLink("New Item", "CreateItem", new { id = ViewBag.Id }, new { @class = "btn btn-default" })
+    @Html.ActionLink("Clear Items", "ClearItem", new { id = ViewBag.Id }, new { @class = "btn btn-default" })
 </p>
 
-<table class="view-item-table">
+<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.IsChecked)
@@ -42,14 +42,26 @@
                 @Html.DisplayFor(modelItem => item.Note)
             </td>
             <td>
-
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.Id}, new { @class = "btn btn-default" })
+                @Html.ActionLink("Details", "Details", new { id = item.Id}, new { @class = "btn btn-default" })*@
                 @Html.ActionLink("Delete", "Delete", "ShoppingListItem", new { id = item.Id }, new { @class = "btn btn-default" })
 
             </td>
         </tr>
     }
 </table>
+<<<<<<< HEAD
 @*@section scripts {
+=======
+
+<p>
+    @Html.ActionLink("New Item", "CreateItem", new { id = ViewBag.Id }, new { @class = "btn btn-default" }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+
+@section scripts {
+>>>>>>> 445989b4c2986bdaa1a44f46cd077ce6ce76cfee
     <script language="javascript" text="text/javascript">
         $(document)
             .ready(function() {

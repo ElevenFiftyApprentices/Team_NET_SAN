@@ -9,6 +9,7 @@
 <p>
     @Html.ActionLink("New List", "Create", null, new { @class = "btn btn-default" })
 </p>
+
 <table class="table">
     <tr>
 
@@ -32,28 +33,38 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        @*<td>
+    @foreach (var item in Model) {
+        <tr>
+            @*<td>
             @Html.DisplayFor(modelItem => item.UserId)
         </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        @*<td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            @*<td>
             @Html.DisplayFor(modelItem => item.Color)
         </td>*@
+
         <td>
             @Html.DisplayFor(modelItem => item.CreatedUtc)
         </td>
         @*<td>
+
+            @*<td>
+            @Html.DisplayFor(modelItem => item.CreatedUtc)
+        </td>*@
+
+            @*<td>
             @Html.DisplayFor(modelItem => item.ModifiedUtc)
         </td>*@
-        <td>
-         @Html.ActionLink("Show", "ViewItem", new { id=item.Id }, new { @class = "btn btn-default" }) |
-         @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new { @class = "btn btn-default" })
-        </td>
-    </tr>
-}
+            <td>
+                |
+                @Html.ActionLink("Show", "ViewItem", new { id=item.Id }, new { @class = "btn btn-default" }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new { @class = "btn btn-default" })
+            </td>
+        </tr>
+    }
 
 </table>
+
+

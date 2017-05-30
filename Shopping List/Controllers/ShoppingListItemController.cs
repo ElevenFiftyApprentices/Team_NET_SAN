@@ -47,10 +47,11 @@ namespace Shopping_List.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ShoppingListId,Contents,IsChecked,CreatedUtc,ModifiedUtc")] ShoppingListItem shoppingListItem)
+        public ActionResult Create([Bind(Include = "Id,ShoppingListId,Contents,IsChecked,CreatedUtc,ModifiedUtc")] ShoppingListItem shoppingListItem, int shoppingListId)
         {
             if (ModelState.IsValid)
             {
+                shoppingListItem.ShoppingListId = 26;
                 db.ShoppingListItems.Add(shoppingListItem);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -59,9 +60,17 @@ namespace Shopping_List.Controllers
             return View(shoppingListItem);
         }
 
+
+
+  
+
+
+
+
+
         // GET: ShoppingListItem/Edit/5
         public ActionResult Edit(int? id)
-        {
+            {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -72,7 +81,7 @@ namespace Shopping_List.Controllers
                 return HttpNotFound();
             }
             return View(shoppingListItem);
-        }
+            }
 
         // POST: ShoppingListItem/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -91,16 +100,16 @@ namespace Shopping_List.Controllers
         }
 
         // GET: ShoppingListItem/Delete/5
-        public ActionResult Delete(int? id, bool? saveChangesError = false)
+        public ActionResult Delete(int? id) /*bool? saveChangesError = false*/
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            if (saveChangesError.GetValueOrDefault())
-            {
-                ViewBag.ErrorMessage = "Delete failed.";
-            }
+            //if (saveChangesError.GetValueOrDefault())
+            //{
+            //    ViewBag.ErrorMessage = "Delete failed.";
+            //}
             ShoppingListItem shoppingListItem = db.ShoppingListItems.Find(id);
             if (shoppingListItem == null)
             {
@@ -112,12 +121,12 @@ namespace Shopping_List.Controllers
         // POST: ShoppingListItem/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int Id)
         {
-            ShoppingListItem shoppingListItem = db.ShoppingListItems.Find(id);
+            ShoppingListItem shoppingListItem = db.ShoppingListItems.Find(Id);
             db.ShoppingListItems.Remove(shoppingListItem);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("ViewItem", "ShoppingList", new {id = shoppingListItem.Id});
         }
 
         protected override void Dispose(bool disposing)
