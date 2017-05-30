@@ -53,6 +53,21 @@ namespace Shopping_List.Controllers
 
         }
 
+
+        //POST: ViewItem/View
+        [HttpPost]
+        public ActionResult ViewItem(FormCollection formCollection)
+        {
+            string[] ids = formCollection["itemId"].Split(new char[] { ',' });
+            foreach (string id in ids)
+            {
+                var item = this.db.ShoppingListItems.Find(int.Parse(id));
+                this.db.ShoppingListItems.Remove(item);
+                this.db.SaveChanges();
+            }
+            return RedirectToAction("ViewItem");
+        }
+
         //POST: UpdateCheckBox
         [HttpPost]
         //[ValidateAntiForgeryToken]  //referencing id in order to update IsChecked,creating a new instance of class and calling it "shoppingListItem"
