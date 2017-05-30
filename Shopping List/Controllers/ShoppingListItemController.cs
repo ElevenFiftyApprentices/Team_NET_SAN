@@ -123,7 +123,8 @@ namespace Shopping_List.Controllers
         //GET Clear Item?
         public ActionResult ClearItem()
         {
-            return View(db.ShoppingListItems.Where(i => i.IsDeleted == true));
+
+            return View(db.ShoppingListItems.Where(i => i.IsDeleted == true).SingleOrDefault());
         }
 
         //POST Clear Item
