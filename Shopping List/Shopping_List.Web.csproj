@@ -191,38 +191,47 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ShoppingListController.cs" />
+    <Compile Include="Controllers\ShoppingListItemController.cs" />
+    <Compile Include="DAL\ListContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\img\cart-photo.jpeg" />
+    <Content Include="Content\img\jumbo-photo-1.jpg" />
+    <Content Include="Content\img\jumbo-photo-2.jpeg" />
+    <Content Include="Content\img\jumbo-photo-3.jpeg" />
+    <Content Include="Content\img\jumbo-photo.jpg" />
+    <Content Include="Content\img\list-background-photo.jpeg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Views\Scripts\bootstrap.js" />
+    <Content Include="Views\Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <None Include="Properties\PublishProfiles\SansShoppingListWeb - Web Deploy.pubxml" />
+    <None Include="Views\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Views\Scripts\jquery-1.10.2.js" />
+    <Content Include="Views\Scripts\jquery-1.10.2.min.js" />
+    <None Include="Views\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Views\Scripts\jquery.validate.js" />
+    <Content Include="Views\Scripts\jquery.validate.min.js" />
+    <Content Include="Views\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Views\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Views\Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\Scripts\respond.js" />
+    <Content Include="Views\Scripts\respond.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -257,6 +266,19 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\ShoppingListItem\Create.cshtml" />
+    <Content Include="Views\ShoppingListItem\Delete.cshtml" />
+    <Content Include="Views\ShoppingListItem\Details.cshtml" />
+    <Content Include="Views\ShoppingListItem\Edit.cshtml" />
+    <Content Include="Views\ShoppingListItem\Index.cshtml" />
+    <Content Include="Views\ShoppingList\Create.cshtml" />
+    <Content Include="Views\ShoppingList\Delete.cshtml" />
+    <Content Include="Views\ShoppingList\Details.cshtml" />
+    <Content Include="Views\ShoppingList\Edit.cshtml" />
+    <Content Include="Views\ShoppingList\Index.cshtml" />
+    <Content Include="Views\ShoppingList\ViewItem.cshtml" />
+    <Content Include="Views\ShoppingList\CreateItem.cshtml" />
+    <Content Include="Views\ShoppingListItem\ClearItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -274,7 +296,17 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShoppingList.Data\Shopping_List.Data.csproj">
+      <Project>{7891ec7b-0b80-4bb2-be05-f0debfdecc37}</Project>
+      <Name>Shopping_List.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShoppingList.Models\Shopping_List.Models.csproj">
+      <Project>{3e3f345e-7e05-4bde-a4d8-0720ffb683e9}</Project>
+      <Name>Shopping_List.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -290,7 +322,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53157</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

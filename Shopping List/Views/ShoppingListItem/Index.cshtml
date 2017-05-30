@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Shopping_List.Models.ShoppingListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+   
+    @*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*@
+
+</p>
+<br /><br />
+        <table class="table">
+            <tr><th><input type="checkbox" id="checkAll" /></th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsChecked)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Contents)
+                </th>
+
+                @*<th>
+                        @Html.DisplayNameFor(model => model.CreatedUtc)
+                        </th>
+                        <th>
+                        @Html.DisplayNameFor(model => model.ModifiedUtc)
+                    </th>*@
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+
+                        @Html.CheckBoxFor(modelItem => item.IsChecked, new { @class = "itemCheckBoxes" })
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contents)
+                    </td>
+
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.CreatedUtc)
+                           </td>
+                           <td>
+                            @Html.DisplayFor(modelItem => item.ModifiedUtc)
+                        </td>*@
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+       
+@*Java Script for our checkboxes*@
+           @section scripts { <script language="javascript" text="text/javascript">
+                $(document)
+                $("#checkAll").click(function () {
+                    $(".checkBox").prop('checked',
+                        $(this).prop('checked'));
+                    .ready(function () {
+                        $("input.itemCheckBoxes") //css selector to find elements in page
+                            .css({ "cursor": "pointer" })
+                            .click(function (e) {
+                                var target = $(e.target);
+                                var Id = target.attr("id");
+
+                                $.ajax({
+                                    method: "POST",
+                                    url: "/shoppinglist/updatecheckbox",
+                                    data: {
+                                        ShoppingListItemId: shoppingListItemId,
+                                        IsChecked: target.is(":checked")
+                                    }
+                                })
+                                    .done(function (r) {
+                                        console.log("finished setting IsChecked - " + r);
+                                    })
+                                    .fail(function (r) {
+                                        alert("Failed to change status");
+                                    });
+
+
+                            });
+                    });
+
+            </script>
+        }

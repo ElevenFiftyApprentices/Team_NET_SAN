@@ -1,0 +1,92 @@
+﻿@model Shopping_List.Models.ShoppingListItem
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ShoppingListItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ShoppingListId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShoppingListId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contents)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contents)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsChecked)
+        </dt>
+
+        <dd>
+
+            @Html.CheckBoxFor(model => model.IsChecked, new { @class = "itemCheckBoxes" })
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUtc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+@section scripts {
+    <script language="javascript" text="text/javascript">
+        $(document)
+            .ready(function() {
+                $("input.itemCheckBoxes") //css selector to find elements in page
+                    .css({ "cursor": "pointer" })
+                    .click(function(e) {
+                        var target = $(e.target);
+                        var Id = target.attr("id");
+
+                        $.ajax({
+                                method: "POST",
+                                url: "/shoppinglist/updatecheckbox",
+                                data: {
+                                    ShoppingListItemId: shoppingListItemId,
+                                    IsChecked: target.is(":checked")
+                                }
+                            })
+                            .done(function(r) {
+                                console.log("finished setting IsChecked - " + r);
+                            })
+                            .fail(function(r) {
+                                alert("Failed to change status");
+                            });
+
+
+                    });
+            });
+
+    </script>
+}

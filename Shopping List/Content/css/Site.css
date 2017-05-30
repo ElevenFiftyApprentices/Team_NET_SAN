@@ -1,0 +1,286 @@
+﻿
+body {
+    padding-top: 90px;
+    padding-bottom: 20px;
+    background-color: #6fb6de;
+    font-family: Comic Sans;
+    /*background-image: url();*/
+    }
+
+.text-danger {
+    color: white;
+    font-size: 20px;
+}
+
+a {
+    color: white;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar-brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e8484f;
+}
+
+/*JUMBOTRON*/
+
+.jumbotron {
+    background-image: url(../img/jumbo-photo-1.jpg);
+    height: 350px;
+}
+
+#jumbo-heading {
+    font-size: 120px;
+    color: white;
+    font-family: Comic Sans;
+    font-weight: bold;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/*HOME BODY*/
+
+#home-subheading {
+    text-align: center;
+    font-size: 60px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 40px;
+}
+
+.home-div-heading {
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#home-text {
+    font-size: 20px;
+}
+
+#col-1 {
+    text-align: center;
+    background-color: #e8484f;
+    color: white;
+    opacity: 0.85;
+    border-radius: 15px;
+    margin: 0px 125px 0px 20px;
+}
+
+#col-2 {
+    text-align: center;
+    background-color: #e8484f;
+    color: white;
+    opacity: 0.85;
+    border-radius: 15px;
+    margin-right: 125px;
+}
+
+#col-3 {
+    text-align: center;
+    background-color: #e8484f;
+    color: white;
+    opacity: 0.85;
+    border-radius: 15px;
+}
+
+/*About Page*/
+
+#about-heading {
+    font-size: 75px;
+    color: white;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#about-container {
+    background-color: #e8484f;
+    opacity: 0.85;
+    width: 60%;
+    margin: auto;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 25px;
+}
+
+/*Contact Page*/
+
+#contact-heading {
+    font-size: 75px;
+    color: white;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+#contact-titles {
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#student-name {
+    color: white;
+    font-size: 30px;
+}
+
+#nathan-contact-info {
+    background-color: #e8484f;
+    opacity: 0.85;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 80px;
+    margin-left: 65px;
+}
+
+#adam-contact-info {
+    background-color: #e8484f;
+    opacity: 0.85;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 80px;
+}
+
+#shelby-contact-info {
+    background-color: #e8484f;
+    opacity: 0.85;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+}
+
+/*Register Page*/
+
+#register-heading {
+    font-size: 75px;
+    color: white;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+#register-form {
+    background-color: #e8484f;
+    opacity: 0.85;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 75px;
+    width: 50%;
+    margin-left: 285px;
+    margin-bottom: 80px;
+}
+
+#register-button {
+    margin-left: 85px;
+}
+
+#register-form {
+    color: white;
+    font-size: 15px;
+}
+
+/*Log in*/
+
+#login-title {
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 45px;
+}
+
+#login-form {
+    background-color: #e8484f;
+    opacity: 0.85;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 75px;
+    width: 80%;
+    color: white;
+    border-radius: 15px;
+}
+
+/*External Login*/
+
+#external-login-heading {
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 15px;
+}
+
+/*Shopping List View*/
+
+#list-view {
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 45px;
+}
+
+/*Create New List View*/
+
+#create-heading {
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 45px;
+}
+
+/*View Item List*/
+
+#view-item-heading {
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 45px;
+}
+
+/*New Item Page*/
+
+#create-item-heading {
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 45px;
+}
+
+
+/*Delete Page*/
+
+#delete-heading {
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 45px;
+}
+
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
