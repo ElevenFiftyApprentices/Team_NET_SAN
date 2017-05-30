@@ -13,7 +13,7 @@ namespace Shopping_List.Models
         [Key]
         public int Id { get; set; }
 
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
 
         [Required]
         [MinLength(2)]
@@ -33,8 +33,7 @@ namespace Shopping_List.Models
         }
 
 
-        [DefaultValue(false)]
-        public bool IsDeleted { get; set; }
+        
 
         public virtual ICollection<ShoppingListItem> ShoppingListItems { get; set; }
     }

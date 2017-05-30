@@ -51,6 +51,9 @@ namespace Shopping_List.Models
             return $"[{Id}]";
         }
 
+        [DefaultValue(false)]
+        public bool IsDeleted { get; set; }
+
         public virtual ICollection<ShoppingList> ShoppingList { get; set; }
     }
 }

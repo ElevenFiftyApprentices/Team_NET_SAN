@@ -51,7 +51,7 @@ namespace Shopping_List.Controllers
         {
             if (ModelState.IsValid)
             {
-                shoppingListItem.ShoppingListId = 26;
+                //shoppingListItem.ShoppingListId = 26;
                 db.ShoppingListItems.Add(shoppingListItem);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -59,15 +59,6 @@ namespace Shopping_List.Controllers
 
             return View(shoppingListItem);
         }
-
-
-
-  
-
-
-
-
-
         // GET: ShoppingListItem/Edit/5
         public ActionResult Edit(int? id)
             {
@@ -121,12 +112,33 @@ namespace Shopping_List.Controllers
         // POST: ShoppingListItem/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int Id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            ShoppingListItem shoppingListItem = db.ShoppingListItems.Find(Id);
+            ShoppingListItem shoppingListItem = db.ShoppingListItems.Find(id);
             db.ShoppingListItems.Remove(shoppingListItem);
             db.SaveChanges();
-            return RedirectToAction("ViewItem", "ShoppingList", new {id = shoppingListItem.Id});
+            return RedirectToAction("Index", "ShoppingList", new {id = shoppingListItem.Id});
+        }
+
+        //GET Clear Item?
+        public ActionResult ClearItem()
+        {
+            return View(db.ShoppingListItems.Where(i => i.IsDeleted == true));
+        }
+
+        //POST Clear Item
+        [HttpPost, ActionName("ClearItem")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ClearAllItems()
+        {
+            IEnumerable<ShoppingListItem> ShoppingListItem = db.ShoppingListItems.Where(i => i.IsDeleted == true);
+            foreach (var Item in ShoppingListItem)
+            {
+                db.ShoppingListItems.Remove(Item);
+            }
+            db.SaveChanges();
+
+            return RedirectToAction("ViewItem");
         }
 
         protected override void Dispose(bool disposing)
