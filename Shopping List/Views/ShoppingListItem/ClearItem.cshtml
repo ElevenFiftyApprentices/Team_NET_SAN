@@ -11,12 +11,13 @@
 </h3>
 
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
 
-    <div class="form-actions no-color">
-        <input type="submit" value="Clear All" class="btn btn-default" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-}
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="ClearAll" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
